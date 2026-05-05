@@ -47,12 +47,12 @@ export function Hero({ data }: { data?: any }) {
           className="flex flex-col sm:flex-row items-center gap-4 pt-4"
         >
           <a href="#projects">
-            <Button size="lg" className="rounded-full px-8 h-12 text-base font-medium">
+            <Button size="lg" className="rounded-full px-8 h-12 text-base font-medium cursor-pointer">
               View Case Studies
             </Button>
           </a>
           <a href={resumeHref} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base font-medium group">
+            <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base font-medium group cursor-pointer">
               <FileText className="mr-2 h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
               Download Resume
             </Button>

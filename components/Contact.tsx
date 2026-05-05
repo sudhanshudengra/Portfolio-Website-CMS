@@ -128,7 +128,7 @@ export function Contact({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-widest uppercase text-xs rounded-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:-translate-y-1 active:translate-y-0"
+                className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-widest uppercase text-xs rounded-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:-translate-y-1 active:translate-y-0 cursor-pointer"
               >
                 {isSubmitting ? 'Executing...' : 'Execute Transmission'}
               </Button>

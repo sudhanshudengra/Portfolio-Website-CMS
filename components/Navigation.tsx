@@ -18,7 +18,7 @@ export function Navigation({ data }: { data?: any }) {
     >
       <div className="flex items-center space-x-2">
         <span className="text-xl font-bold tracking-tight text-foreground">
-          Sudhanshu
+          Sudhanshu Dengra
         </span>
       </div>
 

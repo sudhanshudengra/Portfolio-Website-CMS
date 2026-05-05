@@ -10,9 +10,9 @@ export function Footer({ data }: { data?: any }) {
         </div>
         
         <div className="flex space-x-8 text-sm font-medium tracking-wide">
-          <a href={data?.githubUrl || "https://github.com/sudhanshudengra"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
-          <a href={data?.linkedinUrl || "https://www.linkedin.com/in/sudhanshudengra/"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-          <a href={data?.twitterUrl || "https://x.com/Sudhanshu_0705"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
+          <a href={data?.githubUrl || "https://github.com/sudhanshudengra"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">GitHub</a>
+          <a href={data?.linkedinUrl || "https://www.linkedin.com/in/sudhanshudengra/"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">LinkedIn</a>
+          <a href={data?.twitterUrl || "https://x.com/Sudhanshu_0705"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">Twitter</a>
         </div>
       </div>
     </footer>
