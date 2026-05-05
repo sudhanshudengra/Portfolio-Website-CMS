@@ -1,13 +1,27 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { FileText } from 'lucide-react'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { ThemeToggle } from './ThemeToggle'
 
-export function Navigation({ data }: { data?: any }) {
+export function Navigation({ data }: { data?: { resumeUrl?: string } }) {
   const resumeHref = data?.resumeUrl || '/resume.pdf'
+  const [showResume, setShowResume] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowResume(true)
+      } else {
+        setShowResume(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <motion.nav
@@ -23,48 +37,56 @@ export function Navigation({ data }: { data?: any }) {
       </div>
 
       <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-muted-foreground">
-        <Link
+        <a
           href="#projects"
-          className="hover:text-foreground transition-colors"
+          className="hover:text-foreground transition-colors cursor-pointer"
         >
           Projects
-        </Link>
-        <Link
+        </a>
+        <a
           href="#skills"
-          className="hover:text-foreground transition-colors"
+          className="hover:text-foreground transition-colors cursor-pointer"
         >
           Skills
-        </Link>
-        <Link
+        </a>
+        <a
           href="#experience"
-          className="hover:text-foreground transition-colors"
+          className="hover:text-foreground transition-colors cursor-pointer"
         >
           Experience
-        </Link>
-        <Link
+        </a>
+        <a
           href="#philosophy"
-          className="hover:text-foreground transition-colors"
+          className="hover:text-foreground transition-colors cursor-pointer"
         >
           Philosophy
-        </Link>
+        </a>
       </div>
 
       <div className="flex items-center space-x-4">
-        <a
-          href={resumeHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden sm:flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mr-2"
-        >
-          <FileText className="w-4 h-4 mr-2" />
-          Resume
-        </a>
+        <AnimatePresence>
+          {showResume && (
+            <motion.a
+              href={resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: 15, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 15, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="hidden sm:flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mr-2 cursor-pointer"
+            >
+              <FileText className="w-4 h-4 mr-2 " />
+              Resume
+            </motion.a>
+          )}
+        </AnimatePresence>
         <ThemeToggle />
-        <Link href="#contact">
+        <a href="#contact" className="cursor-pointer">
           <Button className="rounded-full px-6 font-semibold shadow-sm cursor-pointer">
             Get in touch
           </Button>
-        </Link>
+        </a>
       </div>
     </motion.nav>
   )
