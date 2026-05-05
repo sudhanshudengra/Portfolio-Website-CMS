@@ -5,9 +5,12 @@ import { motion } from 'framer-motion'
 import { Mail, MapPin } from 'lucide-react'
 import React, { useState } from 'react'
 
-export function Contact({ data }: { data?: any }) {
+export function Contact({
+  data
+}: {
+  data?: { email?: string }
+}) {
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const resumeHref = data?.resumeUrl || '/resume.pdf'
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
