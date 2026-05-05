@@ -88,7 +88,7 @@ export function Projects({ data }: { data: any[] }) {
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-muted-foreground"
+                    className="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-muted-foreground cursor-pointer"
                   >
                     <span>View Live Project</span>
                     <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -99,7 +99,7 @@ export function Projects({ data }: { data: any[] }) {
                     href={project.repoLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-muted-foreground"
+                    className="group flex items-center space-x-2 text-sm font-medium transition-colors hover:text-muted-foreground cursor-pointer"
                   >
                     <span>View Source</span>
                     <Github className="w-4 h-4 transition-transform group-hover:rotate-12" />
@@ -113,7 +113,7 @@ export function Projects({ data }: { data: any[] }) {
                 <img
                   src={urlForImage(project.coverImage).url()}
                   alt={project.title}
-                  className="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover mix-blend-normal opacity-100 xl:mix-blend-luminosity xl:opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 xl:group-hover:scale-105 transition-all duration-1000 ease-out"
                 />
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 border border-border/50">
