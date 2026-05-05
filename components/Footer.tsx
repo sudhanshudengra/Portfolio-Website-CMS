@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Footer() {
+export function Footer({ data }: { data?: any }) {
   return (
     <footer className="py-12 px-6 md:px-12 border-t border-border bg-background">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -10,9 +10,9 @@ export function Footer() {
         </div>
         
         <div className="flex space-x-8 text-sm font-medium tracking-wide">
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
+          <a href={data?.githubUrl || "https://github.com/sudhanshudengra"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
+          <a href={data?.linkedinUrl || "https://www.linkedin.com/in/sudhanshudengra/"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+          <a href={data?.twitterUrl || "https://x.com/Sudhanshu_0705"} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Twitter</a>
         </div>
       </div>
     </footer>

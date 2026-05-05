@@ -11,6 +11,26 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'email',
+      title: 'Contact Email',
+      type: 'string',
+    }),
+    defineField({
+      name: 'githubUrl',
+      title: 'GitHub URL',
+      type: 'url',
+    }),
+    defineField({
+      name: 'linkedinUrl',
+      title: 'LinkedIn URL',
+      type: 'url',
+    }),
+    defineField({
+      name: 'twitterUrl',
+      title: 'Twitter URL',
+      type: 'url',
+    }),
+    defineField({
       name: 'resume',
       title: 'Resume PDF',
       type: 'file',

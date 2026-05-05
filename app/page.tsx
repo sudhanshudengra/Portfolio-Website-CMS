@@ -26,7 +26,7 @@ export default async function Home() {
 
       <Contact data={data?.settings} />
 
-      <Footer />
+      <Footer data={data?.settings} />
     </main>
   )
 }
