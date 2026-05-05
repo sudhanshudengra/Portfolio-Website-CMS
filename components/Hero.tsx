@@ -19,7 +19,7 @@ export function Hero({ data }: { data?: any }) {
           className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-border bg-muted/30"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-foreground" />
-          <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">Senior Full Stack Engineer</span>
+          <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">Full Stack Engineer</span>
         </motion.div>
 
         <motion.h1 
