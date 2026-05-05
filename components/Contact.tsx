@@ -118,7 +118,7 @@ export function Contact({ data }: { data?: any }) {
                   id="message"
                   required
                   placeholder="DESCRIBE THE PROJECT PARAMETERS..."
-                  className="w-full min-h-[120px] resize-none bg-muted/30 border border-border/50 rounded-md px-4 py-3 text-sm font-mono focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30 transition-all duration-300 placeholder:text-muted-foreground/40 hover:bg-muted/50"
+                  className="w-full min-h-30 resize-none bg-muted/30 border border-border/50 rounded-md px-4 py-3 text-sm font-mono focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/30 transition-all duration-300 placeholder:text-muted-foreground/40 hover:bg-muted/50"
                 />
               </div>
 
