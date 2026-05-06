@@ -43,15 +43,15 @@ Create a `.env` file in the root directory and configure the following parameter
 
 ```env
 # Sanity Client Config (Public keys)
-NEXT_PUBLIC_SANITY_PROJECT_ID="kdqqibg9"
+NEXT_PUBLIC_SANITY_PROJECT_ID="your_sanity_project_id"
 NEXT_PUBLIC_SANITY_DATASET="production"
-NEXT_PUBLIC_SANITY_API_VERSION="2025-04-30"
+NEXT_PUBLIC_SANITY_API_VERSION="yyyy-mm-dd"
 
 # Sanity Write Authorization (Private Server-Only Token)
 SANITY_API_WRITE_TOKEN="your_private_sanity_write_token"
 
 # Web3Forms API Gateway (Public Key)
-NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY="0d9ee642-af50-410d-8402-2957fad2016b"
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY="your_web3forms_access_key"
 ```
 
 ---
