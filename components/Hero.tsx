@@ -5,11 +5,21 @@ import { motion } from 'framer-motion'
 import { FileText } from 'lucide-react'
 import { useEffect } from 'react'
 
-export function Hero({ data }: { data?: any }) {
+type SiteSettings = {
+  resumeUrl?: string
+  heroGreeting?: string
+  heroHeadline?: string
+  heroSubtitle?: string
+}
+
+export function Hero({ data }: { data?: SiteSettings }) {
   const resumeHref = data?.resumeUrl || '/resume.pdf'
   const greetingText = data?.heroGreeting || "Hi, I'm Sudhanshu"
-  const headlineText = data?.heroHeadline || "Building robust applications & scalable systems."
-  const subtitleText = data?.heroSubtitle || "I'm a Full Stack Engineer specializing in high-density data visualizations, schema-driven architectures, and performance-critical AI solutions for enterprise clients."
+  const headlineText =
+    data?.heroHeadline || 'Building robust applications & scalable systems.'
+  const subtitleText =
+    data?.heroSubtitle ||
+    "I'm a Full Stack Engineer specializing in high-density data visualizations, schema-driven architectures, and performance-critical AI solutions for enterprise clients."
 
   useEffect(() => {
     // Lock scrolling while the initial entrance animation plays
@@ -91,16 +101,18 @@ export function Hero({ data }: { data?: any }) {
             transition={{ duration: 0.8, delay: 1.6, ease: 'easeOut' }}
             className="text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter leading-tight max-w-4xl"
           >
-            {headlineText.split('&').map((part: string, i: number, arr: string[]) => (
-              <span key={i}>
-                {part}
-                {i !== arr.length - 1 && (
-                  <span className="text-muted-foreground italic font-serif text-[0.85em]">
-                    &amp;
-                  </span>
-                )}
-              </span>
-            ))}
+            {headlineText
+              .split('&')
+              .map((part: string, i: number, arr: string[]) => (
+                <span key={i}>
+                  {part}
+                  {i !== arr.length - 1 && (
+                    <span className="text-muted-foreground italic font-serif text-[0.85em]">
+                      &amp;
+                    </span>
+                  )}
+                </span>
+              ))}
           </motion.h1>
 
           <motion.p

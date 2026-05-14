@@ -1,15 +1,15 @@
 'use client'
 
 import { NextStudio } from 'next-sanity/studio'
+import { useSyncExternalStore } from 'react'
 import config from '../../../sanity.config'
-import { useEffect, useState } from 'react'
 
 export function Studio() {
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  )
 
   if (!isMounted) return null
 

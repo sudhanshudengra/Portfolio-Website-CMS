@@ -2,9 +2,28 @@
 
 import { motion } from 'framer-motion'
 import { Code2, ExternalLink, GitBranch as Github } from 'lucide-react'
+import Image from 'next/image'
 import { urlForImage } from '../sanity/lib/image'
 
-export function Projects({ data }: { data: any[] }) {
+type ProjectMetric = {
+  _key?: string
+  label?: string
+  value?: string
+}
+
+type ProjectItem = {
+  _key?: string
+  title?: string
+  description?: string
+  technologies?: string[]
+  features?: string[]
+  metrics?: ProjectMetric[]
+  liveLink?: string
+  repoLink?: string
+  coverImage?: Parameters<typeof urlForImage>[0]
+}
+
+export function Projects({ data }: { data: ProjectItem[] }) {
   if (!data || data.length === 0) return null
 
   return (
@@ -69,7 +88,7 @@ export function Projects({ data }: { data: any[] }) {
 
               {project.metrics && project.metrics.length > 0 && (
                 <div className="grid grid-cols-2 gap-8 pt-8">
-                  {project.metrics.map((metric: any) => (
+                  {project.metrics.map(metric => (
                     <div key={metric._key}>
                       <p className="text-4xl font-medium tracking-tighter mb-2">
                         {metric.value}
@@ -110,10 +129,13 @@ export function Projects({ data }: { data: any[] }) {
 
             <div className="flex-1 w-full aspect-4/3 relative bg-muted/30 group overflow-hidden">
               {project.coverImage ? (
-                <img
+                <Image
                   src={urlForImage(project.coverImage).url()}
-                  alt={project.title}
-                  className="w-full h-full object-cover mix-blend-normal opacity-100 xl:mix-blend-luminosity xl:opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 xl:group-hover:scale-105 transition-all duration-1000 ease-out"
+                  alt={project.title || 'Project preview'}
+                  fill
+                  unoptimized
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover mix-blend-normal opacity-100 xl:mix-blend-luminosity xl:opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 xl:group-hover:scale-105 transition-all duration-1000 ease-out"
                 />
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 border border-border/50">

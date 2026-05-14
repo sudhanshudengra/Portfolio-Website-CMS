@@ -2,7 +2,15 @@
 
 import { motion } from 'framer-motion'
 
-export function Philosophy({ data }: { data: any[] }) {
+type PhilosophyItem = {
+  _key?: string
+  title?: string
+  description?: string
+  metricLabel?: string
+  metricValue?: string
+}
+
+export function Philosophy({ data }: { data: PhilosophyItem[] }) {
   if (!data || data.length === 0) return null
 
   return (
@@ -28,7 +36,7 @@ export function Philosophy({ data }: { data: any[] }) {
         </h3>
         <p className="mt-6 text-muted-foreground max-w-2xl text-lg font-light">
           A system is only as strong as its weakest edge case. I build with a
-          "fail-fast, recover-faster" philosophy.
+          &ldquo;fail-fast, recover-faster&rdquo; philosophy.
         </p>
       </motion.div>
 
