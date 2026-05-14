@@ -10,7 +10,13 @@ export function Philosophy({ data }: { data: any[] }) {
       id="philosophy"
       className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-border/50"
     >
-      <div className="mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="mb-20"
+      >
         <h2 className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-4">
           The Methodology
         </h2>
@@ -24,16 +30,20 @@ export function Philosophy({ data }: { data: any[] }) {
           A system is only as strong as its weakest edge case. I build with a
           "fail-fast, recover-faster" philosophy.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {data.map((item, index) => (
           <motion.div
             key={item._key || index}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{
+              duration: 1,
+              delay: index * 0.15,
+              ease: [0.16, 1, 0.3, 1]
+            }}
             className="group flex flex-col h-full"
           >
             <div className="flex flex-col h-full p-8 rounded-3xl bg-card border border-border shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-foreground/20 transition-all duration-500 relative overflow-hidden">

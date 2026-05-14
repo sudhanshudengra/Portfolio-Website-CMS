@@ -11,6 +11,24 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'heroGreeting',
+      title: 'Hero Greeting',
+      type: 'string',
+      description: 'The small intro text (e.g., "Hi, I\'m Sudhanshu")',
+    }),
+    defineField({
+      name: 'heroHeadline',
+      title: 'Hero Headline',
+      type: 'text',
+      description: 'The large main text (e.g., "Building robust applications...")',
+    }),
+    defineField({
+      name: 'heroSubtitle',
+      title: 'Hero Subtitle',
+      type: 'text',
+      description: 'The paragraph below the headline (e.g., "I\'m a Full Stack Engineer...")',
+    }),
+    defineField({
       name: 'email',
       title: 'Contact Email',
       type: 'string',
